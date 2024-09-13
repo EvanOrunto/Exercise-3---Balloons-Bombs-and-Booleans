@@ -60,7 +60,7 @@ public class PlayerControllerX : MonoBehaviour {
             Destroy(other.gameObject);
         }
         // If player hits the ground add an impulse force
-        else if (other.gameObject.CompareTag("Ground")) {
+        else if (other.gameObject.CompareTag("Ground") && !gameOver) {
             playerRb.AddForce(Vector3.up * 7, ForceMode.Impulse);
             playerAudio.PlayOneShot(bounceSound, 1.0f);
         }
